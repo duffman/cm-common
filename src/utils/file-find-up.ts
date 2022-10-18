@@ -30,8 +30,10 @@
 
  =---------------------------------------------------------------= */
 
-import * as fs   from "fs";
-import * as path from "path";
+import * as fs       from "fs";
+import * as path     from "path";
+import { PathUtils } from "./path.utils";
+import { UrlUtils }  from "./url.utils";
 
 export enum PathAlias {
 	projectRoot = "{{PROJECT}}",
@@ -80,7 +82,7 @@ export class FileFindUp {
 
 		for (let i = 0; i < parts.length; i++) {
 			tmpStr     = path.resolve(tmpStr, parts[ i ]);
-			tmpStr     = FileFindUp.ensureTrailingPathDelimiter(tmpStr);
+			tmpStr     = UrlUtils.ensureTrailingSlash(tmpStr);
 			parts[ i ] = tmpStr;
 		}
 

@@ -3,7 +3,7 @@
  * @date: 2022-10-13 06:40
  */
 
-export enum ObjType {
+export enum CmObjType {
 	string = "string",
 	number = "number",
 	bigint = "bigint",
@@ -12,10 +12,6 @@ export enum ObjType {
 	undefined = "undefined",
 	object = "object",
 	function = "function"
-}
-
-export enum cliColors {
-
 }
 
 export const ESCAPE        = "";

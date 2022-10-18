@@ -28,6 +28,7 @@
 	"exclude":         [
 		"hack",
 		"node_modules",
+		"src/test.ts",
 		"lib"
 	],
 	"include":         [

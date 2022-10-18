@@ -2,7 +2,8 @@
  * @author: Patrik Forsberg <patrik.forsberg@coldmind.com>
  * @date: 2022-10-13 06:23
  */
-import { FORMAT_SPACES } from "../cm-common.const";
+
+import { FORMAT_SPACES } from "../types/types";
 
 export class ObjUtils {
 	public static isSimpleType(obj: any): boolean {

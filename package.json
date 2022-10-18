@@ -1,10 +1,9 @@
 {
   "name": "cm-commonr",
-  "version": "0.9.4",
+  "version": "0.9.5",
   "description": "Utility library, used by the CM Modules",
   "main": "index.js",
-  "type": "module",
-  "repository": "https://github.com/duffman/cm-web-server.git",
+  "repository": "https://github.com/duffman/cm-common.git ",
   "author": "Coldmind AB - Patrik Forsberg <patrik@coldmind.com>",
   "license": "MIT",
   "private": false,
