@@ -1,1 +1,1 @@
-# zynaptic-common
+# cm-common
