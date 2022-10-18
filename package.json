@@ -1,6 +1,6 @@
 {
-  "name": "cm-commonr",
-  "version": "0.9.5",
+  "name": "dina-common",
+  "version": "0.9.6",
   "description": "Utility library, used by the CM Modules",
   "main": "index.js",
   "repository": "https://github.com/duffman/cm-common.git ",
