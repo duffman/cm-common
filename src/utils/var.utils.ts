@@ -3,7 +3,8 @@
  * @date: 2022-10-13 07:51
  */
 
-import { CmObjType } from "../types/types";
+
+import { ObjectType } from "../types/object.type";
 
 /**
  * Use the stringifyer to compare object values
@@ -20,13 +21,7 @@ export class VarUtils {
 		return !isNaN(+value);
 	}
 
-	public static typeOf(obj: any, varType: CmObjType) {
+	public static typeOf(obj: any, varType: ObjectType) {
 		return typeof obj === varType;
 	}
-
-	public static isStr(obj: any) {
-		return VarUtils.typeOf(obj, CmObjType.string);
-	}
-
-	public  static
 }

@@ -2,13 +2,14 @@
  * @author: Patrik Forsberg <patrik.forsberg@coldmind.com>
  * @date: 2022-10-14 10:56
  */
-import path         from "path";
-import { StrUtils } from "./str.utils";
+
+import * as path from "path";
+import { Str } from "./str";
 
 export class UrlUtils {
 
 	public static ensureLeadingSlash(searchPath: string) {
-		if (StrUtils.isEmpty(searchPath)) {
+		if (Str.isEmpty(searchPath)) {
 			return;
 		}
 
@@ -27,7 +28,7 @@ export class UrlUtils {
 	 * @returns {string}
 	 */
 	public static ensureTrailingSlash(searchPath: string) {
-		if (StrUtils.isEmpty(searchPath)) {
+		if (Str.isEmpty(searchPath)) {
 			return;
 		}
 

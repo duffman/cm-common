@@ -4,8 +4,8 @@
  */
 
 export { MiscUtils } from "./misc.utils";
-export { StrUtils }  from "./str.utils";
-export { FileUtils }     from "./file.utils";
+export { Str }       from "./str";
+export { FileUtils } from "./file.utils";
 export { FileFindUp }    from "./file-find-up";
 export { JsonUtils }     from "./json.utils";
 export { ObjUtils }      from "./obj-utils";

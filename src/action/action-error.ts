@@ -4,13 +4,41 @@
  * Proprietary and confidential.
  */
 
-export class ActionError<T = any> extends Error implements Error {
+import { ActionErrorType } from "../types/action-error.type";
+import { IActionError }    from "../types/action-error.type";
+
+export class ActionError<T = any> extends Error implements Error, IActionError {
 	public name: string;
 	public stack?: string;
 	public error: Error | any = null;
+	public errorType?: ActionErrorType;
 
-	constructor(public message: string, public errorCode?: number, public data?: T) {
+	constructor(public message: string = ActionErrorType.Unknown, public errorCode?: number, public data?: T) {
 		super();
+	}
+
+	public static internalError(): ActionError {
+		return new ActionError().setType(ActionErrorType.InternalError);
+	}
+
+	public setType(errorType: ActionErrorType): ActionError {
+		this.errorType = errorType;
+		return this;
+	}
+
+	public throw(): void {
+		throw this;
+	}
+
+	public toJsonStr(): string {
+		return JSON.stringify(
+			{
+				errorType: this.errorType,
+				message  : this.message,
+				code     : this.errorCode,
+				error    : this.error
+			}
+		)
 	}
 
 	public setError(e: Error): void {

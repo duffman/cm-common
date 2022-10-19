@@ -1,11 +1,11 @@
 {
   "name": "dina-common",
-  "version": "0.9.6",
-  "description": "Utility library, used by the CM Modules",
+  "version": "1.0.2",
+  "description": "Utility library, used by the Dina Modules",
   "main": "index.js",
-  "repository": "https://github.com/duffman/cm-common.git ",
+  "repository": "https://github.com/duffman/dina-common.git",
   "author": "Coldmind AB - Patrik Forsberg <patrik@coldmind.com>",
-  "license": "MIT",
+  "license": "MPL-2.0",
   "private": false,
   "dependencies": {
     "ansi-colors": "^4.1.3"

@@ -4,9 +4,11 @@
  */
 
 import { ActionError } from "./action-error";
-import { IAction }     from "./action.type";
+import { IAction }     from "../types/action.type";
 
 export class ActionResult<T = void> implements IAction<T> {
+	message?: string;
+
 	constructor(
 		public success: boolean = false,
 		public data?: T,
@@ -29,14 +31,28 @@ export class ActionResult<T = void> implements IAction<T> {
 		return this;
 	}
 
+	public fail(message?: string, code?: number): ActionResult<T> {
+		this.success = false;
+
+		if (message || code) {
+			this.setError(message, code);
+		}
+
+		return this;
+	}
+
+	public setMessage(value: string): ActionResult<T> {
+		this.message = value;
+		return this;
+	}
+
 	public setData(data: T): ActionResult<T> {
 		this.data = data;
 		return this;
 	}
 
-	public setError(name: string, message: string, code: number = -1): ActionResult<T> {
+	public setError(message: string, code: number = -1): ActionResult<T> {
 		(this.error as any) = {
-			name: name,
 			message: message,
 			code: code
 		}

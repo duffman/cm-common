@@ -30,10 +30,9 @@
 
  =---------------------------------------------------------------= */
 
-import * as fs       from "fs";
-import * as path     from "path";
-import { PathUtils } from "./path.utils";
-import { UrlUtils }  from "./url.utils";
+import * as fs      from "fs";
+import * as path    from "path";
+import { UrlUtils } from "./url.utils";
 
 export enum PathAlias {
 	projectRoot = "{{PROJECT}}",

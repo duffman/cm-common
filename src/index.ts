@@ -5,8 +5,8 @@
 
 
 export { ActionResult } from "./action/action";
-export { ActionError }  from "./action/action-error";
-export { IAction }      from "./action/action.type";
-export { CmDate }       from "./datetime/cm-date";
-export { CmLogger }     from "./logger/cm-logger";
-export *                from "utils";
+export { ActionError } from "./action/action-error";
+export { IAction }     from "./types/action.type";
+export { DinaDate } from "./datetime/dina-date";
+export { DLog }     from "./logger/d-log";
+export *            from "utils";

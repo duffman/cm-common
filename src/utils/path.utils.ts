@@ -3,7 +3,7 @@
  * @date: 2022-10-13 07:52
  */
 
-import { FileUtils }  from "./file.utils";
+import { FileUtils } from "./file.utils";
 
 export class PathUtils {
 	/**
