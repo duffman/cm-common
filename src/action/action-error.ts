@@ -4,8 +4,8 @@
  * Proprietary and confidential.
  */
 
-import { ActionErrorType } from "../types/action-error.type";
-import { IActionError }    from "../types/action-error.type";
+import { ActionErrorType } from "..";
+import { IActionError }    from "..";
 
 export class ActionError<T = any> extends Error implements Error, IActionError {
 	public name: string;
@@ -13,12 +13,9 @@ export class ActionError<T = any> extends Error implements Error, IActionError {
 	public error: Error | any = null;
 	public errorType?: ActionErrorType;
 
-	constructor(public message: string = ActionErrorType.Unknown, public errorCode?: number, public data?: T) {
+	constructor(
+		public message: string, public errorCode?: number, public data?: T) {
 		super();
-	}
-
-	public static internalError(): ActionError {
-		return new ActionError().setType(ActionErrorType.InternalError);
 	}
 
 	public setType(errorType: ActionErrorType): ActionError {
