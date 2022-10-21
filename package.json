@@ -1,6 +1,6 @@
 {
   "name": "dina-common",
-  "version": "1.0.2",
+  "version": "1.0.7",
   "description": "Utility library, used by the Dina Modules",
   "main": "index.js",
   "repository": "https://github.com/duffman/dina-common.git",

@@ -3,10 +3,10 @@
  * @date: 2022-10-14 11:06
  */
 
-import { ActionError } from "./action-error";
-import { IAction }     from "../types/action.type";
+import { IActionResult } from "..";
+import { ActionError }   from "./action-error";
 
-export class ActionResult<T = void> implements IAction<T> {
+export class ActionResult<T = any> implements IActionResult<T> {
 	message?: string;
 
 	constructor(
@@ -22,11 +22,11 @@ export class ActionResult<T = void> implements IAction<T> {
 	 * @returns {ActionResult<T>}
 	 * @constructor
 	 */
-	public static new<T>(value?: boolean): ActionResult<T> {
+	public static new<T>(value?: boolean): IActionResult<T> {
 		return new ActionResult<T>(value);
 	}
 
-	public setSuccess(value: boolean = true): ActionResult<T> {
+	public setSuccess(value: boolean = true): IActionResult<T> {
 		this.success = value;
 		return this;
 	}
