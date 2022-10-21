@@ -2,6 +2,7 @@
  * @author: Patrik Forsberg <patrik.forsberg@coldmind.com>
  * @date: 2022-10-13 06:06
  */
+
 import { Str }      from "../utils";
 import { ObjUtils } from "../utils";
 
@@ -23,11 +24,11 @@ export class DLog {
 	 * @param {string} label
 	 * @param dataArr
 	 */
-	public static info(label: string, ...dataArr: any[]): void {
+	public static info(label?: string, ...dataArr: any[]): void {
 		DLog.logPrettySymbol(logSymbols.info, colors.blue, label, dataArr);
 	}
 
-	public static success(label: string, ...dataArr: any[]): void {
+	public static success(label?: string, ...dataArr: any[]): void {
 		DLog.logPrettySymbol(logSymbols.success, colors.green, label, dataArr);
 	}
 
@@ -36,16 +37,19 @@ export class DLog {
 	 * @param {string} label
 	 * @param dataArr
 	 */
-	public static warn(label: string, ...dataArr: any[]): void {
+	public static warn(label?: string, ...dataArr: any[]): void {
 		DLog.logPrettySymbol(logSymbols.warning, colors.yellow, label, dataArr);
 	}
 
-	public static error(label: string, ...dataArr: any[]): void {
-		console.log(logSymbols.error, "erro ------");
+	public static error(label?: string, ...dataArr: any[]): void {
 		DLog.logPrettySymbol(logSymbols.error, colors.red, label, dataArr);
 	}
 
-	public static debug(label: string, ...dataArr: any[]): void {
+	public static fatal(label?: string, ...dataArr: any[]): void {
+		DLog.logPrettySymbol(logSymbols.error, colors.bgRed.bold.white, label, dataArr);
+	}
+
+	public static debug(label?: string, ...dataArr: any[]): void {
 		if (!process.env.DEBUG) return;
 		DLog.logPretty(colors.cyan, label, dataArr);
 	}
